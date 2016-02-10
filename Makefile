@@ -4,7 +4,7 @@ PREFIX 		= usr
 SBINDIR 	= $(PREFIX)/local/sbin
 MANDIR 		= $(PREFIX)/share/man/man8
 
-bash_comp_dir	= $(PREFIX)/share/bash/bash-completion
+bash_comp_dir	= $(PREFIX)/share/bash-completion
 zsh_comp_dir	= $(PREFIX)/share/zsh/functions/Completion/Unix
 
 apache_conf = $(DESTDIR)/$(SYSCONFDIR)/httpd/conf

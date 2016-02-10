@@ -5,18 +5,18 @@ local -a mods
 case "$service" in
     a2ensite)
 	_wanted sites expl sites \
-	  _files -W /etc/httpd/sites-available
+	  _files -W /etc/httpd/conf/sites-available
 	;;
     a2dissite)
 	_wanted sites expl sites \
-	  _files -W /etc/httpd/sites-enabled
+	  _files -W /etc/httpd/conf/sites-enabled
 	;;
     a2enmod)
-	mods=( /etc/httpd/mods-available/*.load(N:r:t) )
+	mods=( /etc/httpd/conf/mods-available/*.load(N:r:t) )
 	_wanted mods expl mods compadd -a mods
 	;;
     a2dismod)
-	mods=( /etc/httpd/mods-enabled/*.load(N:r:t) )
+	mods=( /etc/httpd/conf/mods-enabled/*.load(N:r:t) )
 	_wanted mods expl mods compadd -a mods
 	;;
 esac
