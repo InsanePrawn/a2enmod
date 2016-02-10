@@ -1,6 +1,6 @@
-DESTDIR 	= 
-SYSCONFDIR 	= /etc
-PREFIX 		= /usr
+DESTDIR 	= /
+SYSCONFDIR 	= etc
+PREFIX 		= usr
 SBINDIR 	= $(PREFIX)/local/sbin
 MANDIR 		= $(PREFIX)/share/man/man8
 
@@ -29,8 +29,8 @@ install:
 # install other configuration files
 	cp conf/* -fr $(apache_conf)/
 # install shell completions
-	install completions/bash_completion -dm755  $(DESTDIR)/$(bash_comp_dir)/a2utils
-	install completions/zsh_completion -dm755  $(DESTDIR)/$(zsh_comp_dir)/_a2utils
+	install completions/bash_completion -Dm755  $(DESTDIR)/$(bash_comp_dir)/a2utils
+	install completions/zsh_completion -Dm755  $(DESTDIR)/$(zsh_comp_dir)/_a2utils
 
 uninstall:
 	rm -f $(DESTDIR)/$(SBINDIR)/a2enmod
