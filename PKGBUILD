@@ -6,7 +6,7 @@ _mods_dir='etc/httpd/conf/mods-available'
 
 pkgname=a2enmod-git
 pkgver=1.2
-pkgrel=2
+pkgrel=3
 pkgdesc='Apache enable/disable module/site. From Debian package.'
 arch=('any')
 url='http://httpd.apache.org/'
@@ -65,9 +65,9 @@ etc/httpd/conf/conf.d/other-vhosts-access-log
 etc/httpd/conf/conf.d/security
 )
 options=(emptydirs !strip)
-install='a2enmod.install'
-source=('git://github.com/dracorp/a2enmod.git')
-_gitname='a2enmod'
+install='a2utils.install'
+source=('git://github.com/InsanePrawn/a2utils.git')
+_gitname='a2utils'
 md5sums=('SKIP')
 package(){
   cd "$srcdir"/$_gitname
