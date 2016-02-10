@@ -1,12 +1,12 @@
-# Maintainer: Piotr Rogoża <rogoza dot piotr at gmail dot com>
-# Contributor: Piotr Rogoża <rogoza dot piotr at gmail dot com>
+# Maintainer: Prawn <insaneprawny at gmail dot com>
+# Contributor: Prawn <insaneprawny at gmail dot com>
 # vim:set ts=2 sw=2 et ft=sh tw=100: expandtab
 
 _mods_dir='etc/httpd/conf/mods-available'
 
-pkgname=a2enmod-git
+pkgname=a2utils
 pkgver=1.2
-pkgrel=3
+pkgrel=1
 pkgdesc='Apache enable/disable module/site. From Debian package.'
 arch=('any')
 url='http://httpd.apache.org/'
@@ -15,10 +15,12 @@ depends=(perl apache)
 optdepends=(
 'php-apache: php support'
 'openssl: https support, to generate a certificate'
+'bash: for bash completion'
+'zsh: for zsh completion'
 )
-provides=(a2enmod)
-conflicts=(a2enmod)
-replaces=(a2enmod)
+provides=()
+conflicts=('a2enmod' 'a2enmod-git' 'a2utils')
+replaces=('a2enmod' 'a2enmod-git')
 backup=(
 ${_mods_dir}/actions.conf
 ${_mods_dir}/alias.conf
