@@ -1,7 +1,7 @@
 DESTDIR 	= 
 SYSCONFDIR 	= /etc
 PREFIX 		= /usr
-SBINDIR 	= $(PREFIX)/sbin
+SBINDIR 	= $(PREFIX)/local/sbin
 MANDIR 		= $(PREFIX)/share/man/man8
 
 apache_conf = $(DESTDIR)/$(SYSCONFDIR)/httpd/conf
