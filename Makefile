@@ -4,6 +4,9 @@ PREFIX 		= /usr
 SBINDIR 	= $(PREFIX)/local/sbin
 MANDIR 		= $(PREFIX)/share/man/man8
 
+bash_comp_dir	= $(PREFIX)/share/bash/bash-completion
+zsh_comp_dir	= $(PREFIX)/share/zsh/functions/Completion/Unix
+
 apache_conf = $(DESTDIR)/$(SYSCONFDIR)/httpd/conf
 
 all:
@@ -25,6 +28,9 @@ install:
 	cp -f man/* $(DESTDIR)/$(MANDIR)/
 # install other configuration files
 	cp conf/* -fr $(apache_conf)/
+# install shell completions
+	install completions/bash_completion -dm755  $(DESTDIR)/$(bash_comp_dir)/a2utils
+	install completions/zsh_completion -dm755  $(DESTDIR)/$(zsh_comp_dir)/_a2utils
 
 uninstall:
 	rm -f $(DESTDIR)/$(SBINDIR)/a2enmod
@@ -35,3 +41,5 @@ uninstall:
 	rm -f $(DESTDIR)/$(MANDIR)/a2dissite.8
 	rm -f $(DESTDIR)/$(MANDIR)/a2enmod.8
 	rm -f $(DESTDIR)/$(MANDIR)/a2ensite.8
+	rm -f $(DESTDIR)/$(bash_comp_dir)/a2utils
+	rm -f $(DESTDIR)/$(zsh_comp_dir)/_a2utils
